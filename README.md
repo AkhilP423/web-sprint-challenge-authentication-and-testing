@@ -54,6 +54,10 @@ Your finished project must include all of the following requirements (further in
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+In modern web applications, we generally use JWTs, as they scale better than a session-cookie based application. Tokens with user data are stored on the client side, while the session uses server memory to store user data. This means that when a large amount of users are accessing the application, tokens are more efficient at scaling up the traffic, as compared to sessions.
 2. What does `bcryptjs` do to help us store passwords in a secure manner?
+The bcrypt hashing function allows us to build a password secure platform, and it scales with computation power. It also hashes every password with a salt. In general, its a safe bet for a secure storage of passwords.
 3. How are unit tests different from integration and end-to-end testing?
+Integration tests are written for endpoints, because they test how different parts of the system work together. This differs from unit tests, which verify the correctness of ONE part of the system in islolation. To test the data access itself, we use end to end tests. However, these tests run slower as they perform operations and run queries against an actual database, similar to the one used in production. In summary, unit tests are of a much smaller scale and run more efficiently for what they do.
 4. How does _Test Driven Development_ change the way we write applications and tests?
+Test driven development means that we write our tests before we write our application code. In theory, our code becomes much higher quality and more efficiently written, as you start with an end goal in mind. Rather than making a plan on the fly, you have tests written out as something to work towards.
